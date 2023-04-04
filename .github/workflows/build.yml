@@ -82,13 +82,14 @@ jobs:
       env:
         CLIENT_ID: ${{ secrets.anypoint_client_id }}
         CLIENT_SECRET: ${{ secrets.anypoint_client_secret }}
+        NAME: ${{ github.event.repository.name }}
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DskipMunitTests -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
-         -DapplicationName="mule-hello-world-test" \
+         -Dname="$NAME-test" \
 
   deploy-production:
     needs: deploy-sandbox
@@ -116,4 +117,4 @@ jobs:
          -Dmule.artifact=$artifactName \
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
-         -DapplicationName="mule-hello-world-prod" \
+         -Dname="$NAME-prod" \
