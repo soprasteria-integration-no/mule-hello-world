@@ -89,6 +89,7 @@ jobs:
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
          -Denv="Sandbox" \
+         -Dmule-env="test" \
 
   deploy-production:
     needs: deploy-sandbox
@@ -106,7 +107,7 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: artifacts
-    - name: Deploy to Sandbox
+    - name: Deploy to Production
       env:
         CLIENT_ID: ${{ secrets.anypoint_client_id }}
         CLIENT_SECRET: ${{ secrets.anypoint_client_secret }}
@@ -117,3 +118,4 @@ jobs:
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
          -Denv="Production" \
+         -Dmule-env="prod" \

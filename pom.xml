@@ -39,7 +39,7 @@
 		          <cloudHubDeployment>
 		            <uri>https://eu1.anypoint.mulesoft.com</uri>
 		            <muleVersion>${app.runtime}</muleVersion>
-		            <applicationName>${app.name}</applicationName>
+		            <applicationName>${app.name}-${mule-env}</applicationName>
 		            <environment>${env}</environment>
 		            <workerType>MICRO</workerType>
 		            <region>eu-central-1</region>
