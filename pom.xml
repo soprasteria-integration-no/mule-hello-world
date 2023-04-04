@@ -7,7 +7,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>mule-hello-world</name>
+	<name>mule-hello-world-${mule-env}</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,6 +40,7 @@
 		            <muleVersion>${app.runtime}</muleVersion>
 		            <environment>${env}</environment>
 		            <workerType>MICRO</workerType>
+		            <applicationName>${app.name}</applicationName>
 		            <region>eu-central-1</region>
 		            <workers>1</workers>
 		            <objectStoreV2>true</objectStoreV2>
