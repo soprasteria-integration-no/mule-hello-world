@@ -9,6 +9,6 @@
 				<fixed-frequency frequency="1" timeUnit="MINUTES"/>
 			</scheduling-strategy>
 		</scheduler>
-		<logger level="INFO" doc:name="Logger" doc:id="b3e8e419-9134-4e0f-a801-3d1e2dc648d1" message="hello world"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b3e8e419-9134-4e0f-a801-3d1e2dc648d1" message="hello world testing"/>
 	</flow>
 </mule>
