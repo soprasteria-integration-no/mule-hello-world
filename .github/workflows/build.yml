@@ -85,11 +85,11 @@ jobs:
         NAME: ${{ github.event.repository.name }}
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy -X -e -DskipMunitTests -DmuleDeploy \
+        mvn deploy -DskipMunitTests -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
-         -Denv="Sandbox"
+         -Denv="Sandbox" \
          -Dmule-env="test" \
 
   deploy-production:
@@ -118,5 +118,5 @@ jobs:
          -Dmule.artifact=$artifactName \
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
-         -Denv="Production"
+         -Denv="Production" \
          -Dmule-env="prod" \
