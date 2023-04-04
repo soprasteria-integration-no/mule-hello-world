@@ -85,7 +85,7 @@ jobs:
         NAME: ${{ github.event.repository.name }}
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy -DskipMunitTests -DmuleDeploy \
+        mvn deploy -X -e -DskipMunitTests -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
