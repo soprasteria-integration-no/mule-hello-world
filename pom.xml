@@ -30,6 +30,33 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 			</plugin>
+		      <plugin>
+		        <groupId>org.mule.tools.maven</groupId>
+		        <artifactId>mule-maven-plugin</artifactId>
+		        <version>${mule.maven.plugin.version}</version>
+		        <extensions>true</extensions>
+		        <configuration>
+		          <cloudHubDeployment>
+		            <uri>https://eu1.anypoint.mulesoft.com</uri>
+		            <muleVersion>${app.runtime}</muleVersion>
+		            <applicationName>${app.name}</applicationName>
+		            <environment>${env}</environment>
+		            <workerType>MICRO</workerType>
+		            <region>eu-central-1</region>
+		            <workers>1</workers>
+		            <objectStoreV2>true</objectStoreV2>
+		            <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
+		            <connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
+		            <connectedAppGrantType>client_credentials</connectedAppGrantType>
+		            <!-- Start: SECURED PROPERTIES CI/CD
+		            <properties>
+		              <secure.key>${decryption.key}</secure.key>
+		            </properties>
+		            End: SECURED PROPERTIES CI/CD -->
+		          </cloudHubDeployment>
+		          <classifier>mule-application</classifier>
+		        </configuration>
+		      </plugin>
 		</plugins>
 	</build>
 
