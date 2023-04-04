@@ -89,6 +89,7 @@ jobs:
          -Dmule.artifact=$artifactName \
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
+         -Denv="Sandbox"
          -Dmule-env="test" \
 
   deploy-production:
@@ -117,4 +118,5 @@ jobs:
          -Dmule.artifact=$artifactName \
          -Danypoint.client_id="$CLIENT_ID" \
          -Danypoint.client_secret="$CLIENT_SECRET" \
+         -Denv="Production"
          -Dmule-env="prod" \
