@@ -9,3 +9,4 @@ on:
 jobs:
   call-workflow:
     uses: soprasteria-integration-no/mule-workflows/.github/workflows/build.yaml@main
+    secrets: inherit
