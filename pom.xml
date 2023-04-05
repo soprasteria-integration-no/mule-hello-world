@@ -47,11 +47,10 @@
 		            <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
 		            <connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
 		            <connectedAppGrantType>client_credentials</connectedAppGrantType>
-		            <!-- Start: SECURED PROPERTIES CI/CD
 		            <properties>
-		              <secure.key>${decryption.key}</secure.key>
+		             	<!-- <secure.key>${decryption.key}</secure.key>-->
+		             	<something>${something}</something>
 		            </properties>
-		            End: SECURED PROPERTIES CI/CD -->
 		          </cloudHubDeployment>
 		          <classifier>mule-application</classifier>
 		        </configuration>
