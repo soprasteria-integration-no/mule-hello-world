@@ -29,32 +29,32 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 			</plugin>
-		      <plugin>
-		        <groupId>org.mule.tools.maven</groupId>
-		        <artifactId>mule-maven-plugin</artifactId>
-		        <version>${mule.maven.plugin.version}</version>
-		        <extensions>true</extensions>
-		        <configuration>
-		          <cloudHubDeployment>
-		            <uri>https://eu1.anypoint.mulesoft.com</uri>
-		            <muleVersion>${app.runtime}</muleVersion>
-		            <environment>${env}</environment>
-		            <workerType>MICRO</workerType>
-		            <applicationName>${project.name}-${mule-env}</applicationName>
-		            <region>eu-central-1</region>
-		            <workers>1</workers>
-		            <objectStoreV2>true</objectStoreV2>
-		            <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
-		            <connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
-		            <connectedAppGrantType>client_credentials</connectedAppGrantType>
-		            <properties>
-		             	<!-- <secure.key>${decryption.key}</secure.key>-->
-		             	<something>${something}</something>
-		            </properties>
-		          </cloudHubDeployment>
-		          <classifier>mule-application</classifier>
-		        </configuration>
-		      </plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://eu1.anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<environment>${env}</environment>
+						<workerType>MICRO</workerType>
+						<applicationName>${project.name}-${mule-env}</applicationName>
+						<region>eu-central-1</region>
+						<workers>1</workers>
+						<objectStoreV2>true</objectStoreV2>
+						<connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
+						<connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<properties>
+							<secure.config-key>${config-key}</secure.config-key>
+							<something>${something}</something>
+						</properties>
+					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -69,6 +69,12 @@
 			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.3</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.connectors</groupId>
+			<artifactId>mule-salesforce-connector</artifactId>
+			<version>10.16.7</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
