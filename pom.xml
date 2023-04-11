@@ -48,7 +48,7 @@
 						<connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<properties>
-							<secure.config-key>${config-key}</secure.config-key>
+							<config-key>${config-key}</config-key>
 							<something>${something}</something>
 						</properties>
 					</cloudHubDeployment>
