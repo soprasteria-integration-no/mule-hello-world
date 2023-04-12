@@ -7,6 +7,14 @@ on:
     branches: [ main ]
     
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.env }}
+    steps:  
+    - name: Extract Properties
+      run: |
+        VENV = "test"
+        echo "CONFIG_KEY=${{ secrets.config_key_$VENV }}" >> $GITHUB_ENV
   workflow:
     uses: soprasteria-integration-no/mule-workflows/.github/workflows/build.yaml@main
     secrets: inherit
