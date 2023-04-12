@@ -11,7 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.env }}
     steps:  
-    - name: Extract Properties
+    - name: Set variable
+      env:
+        VAR2: "test"
       run: |
-        VENV = "test"
-        echo "CONFIG_KEY=${{ secrets.config_key_$VENV }}" >> $GITHUB_ENV
+        VAR_NAME="CONFIG_KEY_${{ env.VAR2 }}"
+        echo "${VAR_NAME}=123" >> $GITHUB_ENV
+    - name: Use variable
+      run: |
+        echo "Value of CONFIG_KEY_${{ env.VAR2 }} is ${{ env.CONFIG_KEY_${{ env.VAR2 }} }}"
