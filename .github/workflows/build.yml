@@ -19,5 +19,6 @@ jobs:
         echo "${VAR_NAME}=${VAR1} ${VAR2}" >> $GITHUB_ENV
     - name: Use variables
       run: |
-        echo "Value of VAR1_${{ env.VAR2 }} is $(eval echo "\${{ env.VAR1_$(echo ${VAR2} | tr '[:upper:]' '[:lower:]') }}")"
-
+        VAR_NAME="VAR1_${{ env.VAR2 }}"
+        VAR_VALUE=${!VAR_NAME}
+        echo "Value of ${VAR_NAME} is ${VAR_VALUE}"
