@@ -15,6 +15,3 @@ jobs:
       run: |
         VENV = "test"
         echo "CONFIG_KEY=${{ secrets.config_key_$VENV }}" >> $GITHUB_ENV
-  workflow:
-    uses: soprasteria-integration-no/mule-workflows/.github/workflows/build.yaml@main
-    secrets: inherit
