@@ -1,2 +1,1 @@
 # mule-hello-world
-d
